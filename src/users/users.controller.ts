@@ -21,17 +21,18 @@ export class UsersController {
 
     session.useremail = user.email;
     session.id = user.id;
-    return user;
+    return "Welcome ^^";
   }
   @UseGuards(AuthGuard)
   @Post('signout')
   signout(@Session() session: any) {
     session.useremail = null;
+    return 'see u later ^^'
   }
   @Post('signup')
   async signUp(@Body() user: userDto) {
-    const newUser = await this.authservice.signup(user.email, user.password);
-    return newUser;
+     await this.authservice.signup(user.email, user.password);
+    return `welcome u can login`;
   }
 }
 

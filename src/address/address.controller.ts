@@ -1,7 +1,9 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
+  Param,
   Post,
   Session,
   UseGuards,
@@ -36,5 +38,10 @@ export class AddressController {
   async getOne(@Body() body: addressDto, @Session() session: any) {
     const address = await this.addressService.findOne(body, session.id);
     return address;
+  }
+  @Delete('delete/:id' )
+  async deleteOne(@Param('id') id: string, @Session() session: any) {
+    const address = await this.addressService.deleteOne(id, session.id);
+    return "DELETED";
   }
 }

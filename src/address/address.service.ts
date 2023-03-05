@@ -27,4 +27,9 @@ export class AddressService {
       where: { address: name.address, userId: userId },
     });
   }
+  async deleteOne(id: string, userId: string) {
+    return await this.prisma.address.deleteMany({
+      where: { id: id , userId: userId },
+    });
+  }
 }
