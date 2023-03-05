@@ -1,0 +1,23 @@
+### list all messages
+Get http://localhost:3000/users/all
+### post 
+
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+
+{
+    "email":"re@dddsddffwedd.sfds",
+    "password":"dd"
+}
+###sda 
+POST http://localhost:3000/users/signin
+Content-Type: application/json
+
+{
+    "email":"re@dddsddffwedd.sfds",
+    "password":"dd"
+}
+
+
+### list all messages
+Post http://localhost:3000/users/signout
